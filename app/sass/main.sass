@@ -37,6 +37,7 @@
 	font-size: 16px
 	color: #fff
 	font-weight: 700
+	white-space: nowrap
 
 	&:hover
 		border: 2px solid #fff
@@ -50,7 +51,7 @@
 		color: #fff
 
 	&--red
-		color: $accent
+		background-color: $red
 
 // -----HAMBURGER-----
 .hamburger
@@ -632,6 +633,166 @@
 			margin-bottom: 20px
 
 
+.accordion
+	padding: 20px 0
+
+	+r(992)
+		padding: 10px 0
+
+	&:last-child
+		margin-bottom: 0
+
+	&__header
+		+transition
+		display: flex
+		cursor: pointer
+		font-weight: 700
+		font-size: 32px
+
+		+r(1200)
+			font-size: 28px
+
+		+r(992)
+			font-size: 24px
+
+		+r(767)
+			font-size: 20px
+
+		span
+			transition: all .2s
+			border-top: 10px solid #000
+			border-left: 5px solid transparent
+			border-right: 5px solid transparent
+			border-bottom: 10px solid transparent
+			transform: translate(0, 45%)
+			margin-left: 15px
+
+	&__content
+		+transition
+		overflow: hidden
+		color: #b5acac
+		height: 0
+
+		p
+			margin-bottom: 15px
+
+			+r(992)
+				margin-bottom: 10px
+
+	&--active
+		.accordion
+			&__header
+				margin-bottom: 20px
+
+				+r(992)
+					margin-bottom: 10px
+
+				span
+					border-top: 10px solid transparent
+					border-bottom: 10px solid #000
+					transform: translate(0, -30%)
+
+			&__content
+				opacity: 1
+
+
+.casino
+	padding: 60px 0
+
+	&__container
+		gap: 15px
+		margin-bottom: 50px
+
+	&__list
+		counter-reset: list
+
+		&_item
+			display: flex
+			justify-content: space-between
+			align-items: center
+			gap: 15px
+			background-color: #fff
+			border-radius: 20px
+			padding: 20px 40px
+			margin-bottom: 10px
+
+			+r(992)
+				padding: 10px 20px
+				flex-direction: column
+
+	&__number
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-shrink: 0
+		min-width: 60px
+		min-height: 60px
+		padding: 5px
+		background-color: #F8F8FB
+		border-radius: 15px
+		font-size: 18px
+		font-weight: 700
+
+		&::before
+			counter-increment: list
+			content: counter(list)
+
+	&__logo
+		display: flex
+		align-items: center
+		flex-shrink: 0
+		width: 100px
+		height: 100px
+		border-radius: 5px
+		overflow: hidden
+
+		img
+			max-width: 100%
+			max-height: 100%
+
+	&__text
+		flex-shrink: 0
+		color: #8d8e9e
+		text-align: center
+
+		&_title
+			font-size: 18px
+			color: $text
+			font-weight: 700
+			margin-bottom: 5px
+
+	&__stars
+		display: flex
+		align-items: center
+		flex-shrink: 0
+		background-color: #F8F8FB
+		padding: 15px 35px
+		border-radius: 10px
+
+		+r(992)
+			padding: 10px 20px
+
+		&_wrap
+			display: grid
+			grid-template-columns: repeat(5, 1fr)
+			gap: 3px
+			margin-right: 40px
+
+			+r(1200)
+				margin-right: 20px
+
+		&_num
+			font-weight: 700
+			font-size: 18px
+
+	&__btn
+		display: flex
+		flex-direction: column
+		gap: 10px
+		flex-shrink: 0
+		min-width: fit-content
+
+
 .footer
 	background-color: $text
 	padding-top: 55px
@@ -670,129 +831,5 @@
 		a
 			color: #fff
 
-
-
-
-
-.casino
-	padding: 60px 0
-	h2
-		margin-bottom: 50px
-	&__container
-		gap: 15px
-		margin-bottom: 50px
-
-	&__wrapp
-		
-
-		&_item
-			display: flex
-			flex-direction: row
-			align-items: center
-			justify-content: space-between
-			background-color: #fff
-			border-radius: 20px
-			padding: 20px 40px
-			margin-bottom: 10px
-	.number
-		padding: 20px
-		background-color: #F8F8FB
-		border-radius: 15px
-		font-size: 18px
-		font-weight: 700
-	.text
-		b
-			font-size: 18px
-			color: $text
-		p
-			color: #8d8e9e
-	.stars
-		background-color: #F8F8FB
-		padding: 10px 30px
-		border-radius: 10px
-		display: flex
-		align-items: center
-		span
-			margin-left: 20px
-			font-weight: 700
-			font-size: 18px
-	.button
-		min-width: 200px
-		gap: 15px
-		display: flex
-		flex-direction: column
-		&__red
-			background-color: #EC1414
-
-
-.accordion
-	padding: 20px 0
-
-	&:last-child
-		margin-bottom: 0
-
-	&__header
-		+transition
-		display: flex
-		align-items: center
-		cursor: pointer
-		font-weight: 700
-
-		p
-			font-size: 36px
-
-		span
-			+transition
-			position: relative
-			width: 32px
-			height: 32px
-
-			&::before,
-			&::after
-				+transition
-				content: ''
-				position: absolute
-				top: 50%
-				left: 50%
-				transform: translate(-50%, -50%)
-				background-color: $black
-
-			&::before
-				width: 10px
-				height: 1px
-
-			&::after
-				height: 10px
-				width: 1px
-
-	&__content
-		+transition
-		overflow: hidden
-		color: #b5acac
-		height: 0
-
-		+r(1200)
-			padding-left: 20px
-
-		+r(767)
-			padding-left: 10px
-
-	&--active
-		.accordion
-			&__header
-				margin-bottom: 20px
-
-				span
-					background-color: $accent
-					border-color: $accent
-
-					&::before,
-						background-color: #ffffff
-
-					&::after
-						background-color: transparent
-
-			&__content
-				opacity: 1
 
 

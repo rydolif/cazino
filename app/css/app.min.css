@@ -619,7 +619,8 @@ textarea::placeholder {
   padding: 0 45px;
   font-size: 16px;
   color: #fff;
-  font-weight: 700
+  font-weight: 700;
+  white-space: nowrap
 }
 .btn:hover {
   border: 2px solid #fff;
@@ -632,7 +633,7 @@ textarea::placeholder {
   color: #fff
 }
 .btn--red {
-  color: #f8b109
+  background-color: #dc3545
 }
 .hamburger {
   position: relative;
@@ -1433,6 +1434,229 @@ textarea::placeholder {
     margin-bottom: 20px
   }
 }
+.accordion {
+  padding: 20px 0
+}
+@media only screen and (max-width:992px) {
+  .accordion {
+    padding: 10px 0
+  }
+}
+.accordion:last-child {
+  margin-bottom: 0
+}
+.accordion__header {
+  -webkit-transition: all .6s;
+  -o-transition: all .6s;
+  transition: all .6s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 32px
+}
+@media only screen and (max-width:1200px) {
+  .accordion__header {
+    font-size: 28px
+  }
+}
+@media only screen and (max-width:992px) {
+  .accordion__header {
+    font-size: 24px
+  }
+}
+@media only screen and (max-width:767px) {
+  .accordion__header {
+    font-size: 20px
+  }
+}
+.accordion__header span {
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+  border-top: 10px solid #000;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid transparent;
+  -webkit-transform: translate(0,45%);
+  -ms-transform: translate(0,45%);
+  transform: translate(0,45%);
+  margin-left: 15px
+}
+.accordion__content {
+  -webkit-transition: all .6s;
+  -o-transition: all .6s;
+  transition: all .6s;
+  overflow: hidden;
+  color: #b5acac;
+  height: 0
+}
+.accordion__content p {
+  margin-bottom: 15px
+}
+@media only screen and (max-width:992px) {
+  .accordion__content p {
+    margin-bottom: 10px
+  }
+}
+.accordion--active .accordion__header {
+  margin-bottom: 20px
+}
+@media only screen and (max-width:992px) {
+  .accordion--active .accordion__header {
+    margin-bottom: 10px
+  }
+}
+.accordion--active .accordion__header span {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid #000;
+  -webkit-transform: translate(0,-30%);
+  -ms-transform: translate(0,-30%);
+  transform: translate(0,-30%)
+}
+.accordion--active .accordion__content {
+  opacity: 1
+}
+.casino {
+  padding: 60px 0
+}
+.casino__container {
+  gap: 15px;
+  margin-bottom: 50px
+}
+.casino__list {
+  counter-reset: list
+}
+.casino__list_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 15px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px 40px;
+  margin-bottom: 10px
+}
+@media only screen and (max-width:992px) {
+  .casino__list_item {
+    padding: 10px 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+  }
+}
+.casino__number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  min-width: 60px;
+  min-height: 60px;
+  padding: 5px;
+  background-color: #f8f8fb;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: 700
+}
+.casino__number::before {
+  counter-increment: list;
+  content: counter(list)
+}
+.casino__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  overflow: hidden
+}
+.casino__logo img {
+  max-width: 100%;
+  max-height: 100%
+}
+.casino__text {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  color: #8d8e9e;
+  text-align: center
+}
+.casino__text_title {
+  font-size: 18px;
+  color: #383845;
+  font-weight: 700;
+  margin-bottom: 5px
+}
+.casino__stars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  background-color: #f8f8fb;
+  padding: 15px 35px;
+  border-radius: 10px
+}
+@media only screen and (max-width:992px) {
+  .casino__stars {
+    padding: 10px 20px
+  }
+}
+.casino__stars_wrap {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+  grid-template-columns: repeat(5,1fr);
+  gap: 3px;
+  margin-right: 40px
+}
+@media only screen and (max-width:1200px) {
+  .casino__stars_wrap {
+    margin-right: 20px
+  }
+}
+.casino__stars_num {
+  font-weight: 700;
+  font-size: 18px
+}
+.casino__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content
+}
 .footer {
   background-color: #383845;
   padding-top: 55px;
@@ -1498,163 +1722,4 @@ textarea::placeholder {
 }
 .footer__container a {
   color: #fff
-}
-.casino {
-  padding: 60px 0
-}
-.casino h2 {
-  margin-bottom: 50px
-}
-.casino__container {
-  gap: 15px;
-  margin-bottom: 50px
-}
-.casino__wrapp_item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  background-color: #fff;
-  border-radius: 20px;
-  padding: 20px 40px;
-  margin-bottom: 10px
-}
-.casino .number {
-  padding: 20px;
-  background-color: #f8f8fb;
-  border-radius: 15px;
-  font-size: 18px;
-  font-weight: 700
-}
-.casino .text b {
-  font-size: 18px;
-  color: #383845
-}
-.casino .text p {
-  color: #8d8e9e
-}
-.casino .stars {
-  background-color: #f8f8fb;
-  padding: 10px 30px;
-  border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center
-}
-.casino .stars span {
-  margin-left: 20px;
-  font-weight: 700;
-  font-size: 18px
-}
-.casino .button {
-  min-width: 200px;
-  gap: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column
-}
-.casino .button__red {
-  background-color: #ec1414
-}
-.accordion {
-  padding: 20px 0
-}
-.accordion:last-child {
-  margin-bottom: 0
-}
-.accordion__header {
-  -webkit-transition: all .6s;
-  -o-transition: all .6s;
-  transition: all .6s;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  font-weight: 700
-}
-.accordion__header p {
-  font-size: 36px
-}
-.accordion__header span {
-  -webkit-transition: all .6s;
-  -o-transition: all .6s;
-  transition: all .6s;
-  position: relative;
-  width: 32px;
-  height: 32px
-}
-.accordion__header span::after,
-.accordion__header span::before {
-  -webkit-transition: all .6s;
-  -o-transition: all .6s;
-  transition: all .6s;
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  background-color: #000
-}
-.accordion__header span::before {
-  width: 10px;
-  height: 1px
-}
-.accordion__header span::after {
-  height: 10px;
-  width: 1px
-}
-.accordion__content {
-  -webkit-transition: all .6s;
-  -o-transition: all .6s;
-  transition: all .6s;
-  overflow: hidden;
-  color: #b5acac;
-  height: 0
-}
-@media only screen and (max-width:1200px) {
-  .accordion__content {
-    padding-left: 20px
-  }
-}
-@media only screen and (max-width:767px) {
-  .accordion__content {
-    padding-left: 10px
-  }
-}
-.accordion--active .accordion__header {
-  margin-bottom: 20px
-}
-.accordion--active .accordion__header span {
-  background-color: #f8b109;
-  border-color: #f8b109
-}
-.accordion--active .accordion__header span::before {
-  background-color: #fff
-}
-.accordion--active .accordion__header span::after {
-  background-color: transparent
-}
-.accordion--active .accordion__content {
-  opacity: 1
 }
