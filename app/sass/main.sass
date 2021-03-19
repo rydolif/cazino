@@ -377,6 +377,114 @@
 		width: 100%
 
 
+.video
+	&__title
+		margin-bottom: 55px
+
+		+r(1200)
+			margin-bottom: 40px
+
+		+r(992)
+			margin-bottom: 20px
+
+	&__wrap
+		display: grid
+		grid-template: auto / 1fr 1fr 1fr
+		gap: 60px 20px
+		margin-bottom: 60px
+
+		+r(1200)
+			grid-template: auto / 1fr 1fr
+			gap: 40px 15px
+
+		+r(992)
+			gap: 30px 15px
+
+		+r(480)
+			grid-template: auto / 1fr
+			gap: 20px 15px
+
+		&_item
+			position: relative
+
+			+r(480)
+				max-width: 320px
+				margin: 0 auto
+
+		&_img
+			position: relative
+			display: block
+			padding-top: 60%
+			margin-bottom: 10px
+			width: 100%
+			overflow: hidden
+			border-radius: 10px
+
+			img
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				object-fit: cover
+				min-width: 100%
+				max-height: 100%
+				border-radius: 10px
+
+			span
+				+absolute
+				display: block
+				background-color: rgba(0, 0, 0, 0.25)
+				border-radius: 100%
+				width: 100px
+				height: 100px
+				z-index: 2
+
+				+r(1200)
+					width: 80px
+					height: 80px
+
+				+r(992)
+					width: 60px
+					height: 60px
+
+				+r(767)
+					width: 40px
+					height: 40px
+
+				&::before
+					content: ''
+					position: absolute
+					left: 65%
+					top: 50%
+					transform: translate(-50%, -50%)
+					border-bottom: 20px solid  transparent
+					border-left: 35px solid #fff
+					border-right: 20px solid transparent
+					border-top: 20px solid transparent
+
+					+r(992)
+						border-bottom: 15px solid  transparent
+						border-left: 25px solid #fff
+						border-right: 15px solid transparent
+						border-top: 15px solid transparent
+
+					+r(767)
+						border-bottom: 10px solid  transparent
+						border-left: 17px solid #fff
+						border-right: 10px solid transparent
+						border-top: 10px solid transparent
+
+		&_subtitle
+			font-size: 18px
+			font-weight: 700
+
+			+r(992)
+				font-size: 16px
+
+			+r(767)
+				font-size: 14px
+
+
 .footer
 	background-color: $text
 	padding-top: 55px
@@ -544,81 +652,6 @@
 			&__content
 				opacity: 1
 
-
-
-.video
-	padding: 60px 0
-
-	&__title
-		margin-bottom: 55px
-
-	&__wrap
-		display: grid
-		grid-template: auto / 1fr 1fr 1fr
-		gap: 60px 20px
-		margin-bottom: 60px
-
-		+r(1200)
-			grid-template: auto / 1fr 1fr
-			gap: 40px 15px
-
-		+r(992)
-			grid-template: auto / 1fr 1fr
-			gap: 30px 15px
-
-		+r(480)
-			grid-template: auto / 1fr
-			gap: 30px 15px
-
-		&_item
-			position: relative
-
-		&_img
-			position: relative
-			display: block
-			padding-top: 60%
-			margin-bottom: 10px
-			width: 100%
-			overflow: hidden
-			border-radius: 10px
-
-			img
-				position: absolute
-				top: 50%
-				left: 50%
-				transform: translate(-50%, -50%)
-				object-fit: cover
-				min-width: 100%
-				max-height: 100%
-				border-radius: 10px
-
-			span
-				+absolute
-				display: block
-				background-color: rgba(0, 0, 0, 0.25)
-				border-radius: 100%
-				width: 100px
-				height: 100px
-				z-index: 2
-
-				&::before
-					content: ''
-					position: absolute
-					left: 65%
-					top: 50%
-					transform: translate(-50%, -50%)
-					border-bottom: 20px solid  transparent
-					border-left: 35px solid #fff
-					border-right: 20px solid transparent
-					border-top: 20px solid transparent
-
-		&_subtitle
-			font-size: 18px
-			font-weight: 700
-			margin-bottom: 15px
-
-		&_desc
-			color: $text
 
 
 .contact
