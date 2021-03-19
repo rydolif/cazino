@@ -7,6 +7,9 @@
 	padding: 0 15px
 	margin: 0 auto
 
+	+r(1440)
+		max-width: 1200px
+
 	+r(1200)
 		max-width: 992px
 
@@ -127,9 +130,7 @@
 				width: 25px
 				transform: rotate(-45deg)
 
-
 // -----TITLE-----
-
 .h1
 	font-size: 36px
 	line-height: 1
@@ -142,6 +143,9 @@
 
 	+r(767)
 		font-size: 24px
+	
+	+r(480)
+		text-align: center
 
 
 .header
@@ -242,15 +246,11 @@
 
 
 .main
-	padding-top: 75px
 	min-height: calc(100vh - 130px)
+	padding: 150px 0 75px
 
 	+r(1200)
 		min-height: calc(100vh - 75px)
-
-
-.news
-	padding: 150px 0 75px
 
 	+r(992)
 		padding: 120px 0 50px
@@ -258,6 +258,8 @@
 	+r(767)
 		padding: 100px 0 40px
 
+
+.news
 	&__header
 		display: flex
 		align-items: flex-end
@@ -299,6 +301,80 @@
 
 			&:last-child
 				margin-bottom: 0
+
+
+.newslist
+	&__title
+		margin-bottom: 55px
+
+		+r(992)
+			margin-bottom: 40px
+
+		+r(767)
+			margin-bottom: 25px
+
+	&__wrap
+		display: grid
+		grid-template: auto / 1fr 1fr 1fr 1fr
+		gap: 60px 20px
+		margin-bottom: 60px
+
+		+r(1200)
+			grid-template: auto / 1fr 1fr 1fr
+			gap: 40px 15px
+
+		+r(992)
+			grid-template: auto / 1fr 1fr
+			gap: 30px 15px
+			margin-bottom: 30px
+
+		+r(480)
+			grid-template: auto / 1fr
+			gap: 30px 15px
+
+		&_item
+			position: relative
+
+			+r(480)
+				max-width: 320px
+				margin: 0 auto
+
+		&_img
+			position: relative
+			display: block
+			padding-top: 75%
+			margin-bottom: 10px
+			width: 100%
+			overflow: hidden
+			border-radius: 10px
+
+			img
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				object-fit: cover
+				min-width: 100%
+				max-height: 100%
+				border-radius: 10px
+
+		&_subtitle
+			font-size: 18px
+			font-weight: 700
+			margin-bottom: 15px
+
+			+r(992)
+				margin-bottom: 10px
+				font-size: 16px
+
+		&_desc
+			color: $text
+
+	&__btn
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 100%
 
 
 .footer
@@ -468,62 +544,6 @@
 			&__content
 				opacity: 1
 
-
-.newslist
-	padding: 60px 0
-
-	&__title
-		margin-bottom: 55px
-
-	&__wrap
-		display: grid
-		grid-template: auto / 1fr 1fr 1fr 1fr
-		gap: 60px 20px
-		margin-bottom: 60px
-
-		+r(1200)
-			grid-template: auto / 1fr 1fr 1fr
-			gap: 40px 15px
-
-		+r(992)
-			grid-template: auto / 1fr 1fr
-			gap: 30px 15px
-
-		&_item
-			position: relative
-
-		&_img
-			position: relative
-			display: block
-			padding-top: 75%
-			margin-bottom: 10px
-			width: 100%
-			overflow: hidden
-			border-radius: 10px
-
-			img
-				position: absolute
-				top: 50%
-				left: 50%
-				transform: translate(-50%, -50%)
-				object-fit: cover
-				min-width: 100%
-				max-height: 100%
-				border-radius: 10px
-
-		&_subtitle
-			font-size: 18px
-			font-weight: 700
-			margin-bottom: 15px
-
-		&_desc
-			color: $text
-
-	&__btn
-		display: flex
-		justify-content: center
-		align-items: center
-		width: 100%
 
 
 .video
