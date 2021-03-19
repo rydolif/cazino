@@ -68,7 +68,7 @@ function browsersync() {
 function scripts() {
 	return src(paths.scripts.src)
 	.pipe(concat(paths.jsOutputName))
-	.pipe(uglify())
+	// .pipe(uglify())
 	.pipe(dest(paths.scripts.dest))
 	.pipe(browserSync.stream())
 }
@@ -78,7 +78,7 @@ function styles() {
 	.pipe(eval(preprocessor)())
 	.pipe(concat(paths.cssOutputName))
 	.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
-	.pipe(cleancss( {level: { 1: { specialComments: 0 } },/* format: 'beautify' */ }))
+	.pipe(cleancss( {level: { 1: { specialComments: 0 } }, format: 'beautify' }))
 	.pipe(dest(paths.styles.dest))
 	.pipe(browserSync.stream())
 }
