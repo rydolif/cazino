@@ -273,6 +273,7 @@
 	&--hero
 		padding-top: 75px
 
+
 .news
 	&__title
 		margin-bottom: 0
@@ -807,13 +808,15 @@
 	display: flex
 	align-items: center
 	z-index: 1
-	overflow: hidden
 	color: #fff
 
 	&__container
 		@extend .bonus__container
 		padding-top: 0
 		padding-bottom: 45px
+
+		+r(992)
+			padding-bottom: 20px
 
 	&__logo
 		display: flex
@@ -994,11 +997,6 @@
 			transform: translate(0, 0) !important
 
 			+r(992)
-				top: 80px
-				font-size: 16px
-				left: 29px !important
-			
-			+r(480)
 				display: none
 
 	.flip-clock-dot
