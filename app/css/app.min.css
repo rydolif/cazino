@@ -1613,7 +1613,8 @@ textarea::placeholder {
 }
 .casino__text {
   color: #8d8e9e;
-  text-align: center
+  text-align: center;
+  max-width: 280px
 }
 .casino__text_title {
   font-size: 18px;
