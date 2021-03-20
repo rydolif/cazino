@@ -920,6 +920,9 @@ textarea::placeholder {
     padding: 100px 0 40px
   }
 }
+.main--hero {
+  padding-top: 75px
+}
 .news__title {
   margin-bottom: 0
 }
@@ -1352,7 +1355,8 @@ textarea::placeholder {
     padding: 40px 0
   }
 }
-.bonus__container {
+.bonus__container,
+.hero__container {
   position: relative;
   background-color: #177656;
   -webkit-box-shadow: 0 0 20px 9px rgba(31,36,78,.45);
@@ -1363,25 +1367,29 @@ textarea::placeholder {
   z-index: 1
 }
 @media only screen and (max-width:1200px) {
-  .bonus__container {
+  .bonus__container,
+  .hero__container {
     padding-top: 110px;
     padding-bottom: 70px
   }
 }
 @media only screen and (max-width:992px) {
-  .bonus__container {
+  .bonus__container,
+  .hero__container {
     padding-top: 70px;
     padding-bottom: 70px;
     z-index: 0
   }
 }
 @media only screen and (max-width:767px) {
-  .bonus__container {
+  .bonus__container,
+  .hero__container {
     padding-top: 40px;
     padding-bottom: 40px
   }
 }
-.bonus__container::before {
+.bonus__container::before,
+.hero__container::before {
   content: url(../img/hero__decor.png);
   position: absolute;
   left: 40%;
@@ -1392,13 +1400,15 @@ textarea::placeholder {
   z-index: -1
 }
 @media only screen and (max-width:992px) {
-  .bonus__container::before {
+  .bonus__container::before,
+  .hero__container::before {
     -webkit-transform: translate(-50%,-50%) scale(.75);
     -ms-transform: translate(-50%,-50%) scale(.75);
     transform: translate(-50%,-50%) scale(.75)
   }
 }
-.bonus__container::before r(767) {
+.bonus__container::before r(767),
+.hero__container::before r(767) {
   display: none
 }
 .bonus__content {
@@ -1591,13 +1601,17 @@ textarea::placeholder {
   border-radius: 5px;
   overflow: hidden
 }
+@media only screen and (max-width:1200px) {
+  .casino__logo {
+    width: 60px;
+    height: 60px
+  }
+}
 .casino__logo img {
   max-width: 100%;
   max-height: 100%
 }
 .casino__text {
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
   color: #8d8e9e;
   text-align: center
 }
@@ -1620,7 +1634,7 @@ textarea::placeholder {
   padding: 15px 35px;
   border-radius: 10px
 }
-@media only screen and (max-width:992px) {
+@media only screen and (max-width:1200px) {
   .casino__stars {
     padding: 10px 20px
   }
@@ -1656,6 +1670,330 @@ textarea::placeholder {
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content
+}
+.hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../img/hero__bg.jpg);
+  padding: 75px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 1;
+  overflow: hidden;
+  color: #fff
+}
+.hero__container {
+  padding-top: 0;
+  padding-bottom: 45px
+}
+.hero__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: -55px auto 15px;
+  max-width: 70%;
+  width: 670px
+}
+@media only screen and (max-width:1440px) {
+  .hero__logo {
+    max-width: 40%
+  }
+}
+.hero__logo img {
+  width: 100%
+}
+.hero__form {
+  max-width: 290px;
+  margin: 0 auto;
+  text-align: center
+}
+@media only screen and (max-width:1200px) {
+  .hero__form {
+    margin-bottom: 25px
+  }
+}
+.hero__form_line {
+  position: relative
+}
+.hero__form input {
+  height: 50px;
+  width: 100%;
+  background: #fff;
+  -webkit-box-shadow: inset 4px 4px 4px rgba(0,0,0,.25);
+  box-shadow: inset 4px 4px 4px rgba(0,0,0,.25);
+  border-radius: 15px;
+  border: 0;
+  color: #8d8e9e;
+  padding: 0 20px;
+  line-height: 50px
+}
+.hero__form input::-webkit-input-placeholder {
+  color: #8d8e9e;
+  line-height: 50px
+}
+.hero__form input::-moz-placeholder {
+  color: #8d8e9e;
+  line-height: 50px
+}
+.hero__form input:-ms-input-placeholder {
+  color: #8d8e9e;
+  line-height: 50px
+}
+.hero__form input::-ms-input-placeholder {
+  color: #8d8e9e;
+  line-height: 50px
+}
+.hero__form input::placeholder {
+  color: #8d8e9e;
+  line-height: 50px
+}
+.hero__form_btn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  display: block;
+  width: 45px;
+  height: 40px;
+  background-color: #f8b109;
+  border-radius: 15px;
+  border: none;
+  outline: 0;
+  background-image: url(../img/arrow.svg);
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0
+}
+.hero__subtitle {
+  text-transform: uppercase;
+  color: #f8b109;
+  font-weight: 900;
+  font-size: 24px;
+  margin-bottom: 15px
+}
+@media only screen and (max-width:992px) {
+  .hero__subtitle {
+    font-size: 20px;
+    margin-bottom: 10px
+  }
+}
+@media only screen and (max-width:767px) {
+  .hero__subtitle {
+    font-size: 16px
+  }
+}
+.hero__content {
+  position: absolute;
+  top: 30px;
+  right: 36px;
+  max-width: 320px;
+  width: 100%;
+  padding: 15px;
+  background: #126f4f;
+  -webkit-box-shadow: inset 4px 5px 6px rgba(31,36,78,.25);
+  box-shadow: inset 4px 5px 6px rgba(31,36,78,.25);
+  border-radius: 15px
+}
+@media only screen and (max-width:1440px) {
+  .hero__content {
+    top: 15px;
+    right: 15px
+  }
+}
+@media only screen and (max-width:1200px) {
+  .hero__content {
+    position: relative;
+    top: 0;
+    right: auto;
+    margin: 0 auto;
+    max-width: 420px
+  }
+}
+.hero__content_btn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 15px;
+  min-width: 42px;
+  height: 38px;
+  background-color: #f8b109;
+  font-size: 30px;
+  font: 700px
+}
+.hero__content_text {
+  margin-bottom: 50px;
+  max-width: 245px;
+  line-height: 1.3
+}
+@media only screen and (max-width:1440px) {
+  .hero__content_text {
+    margin-bottom: 25px
+  }
+}
+@media only screen and (max-width:1200px) {
+  .hero__content_text {
+    max-width: calc(100% - 50px);
+    margin-bottom: 15px
+  }
+}
+.hero__content_price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
+}
+.hero__content_price p {
+  max-width: 45%
+}
+.hero__content_price span {
+  font-size: 24px;
+  color: #f8b109;
+  font-weight: 900
+}
+@media only screen and (max-width:992px) {
+  .hero__content_price span {
+    font-size: 20px
+  }
+}
+.hero__content_name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
+}
+.hero__content_name p {
+  max-width: 45%
+}
+.hero__timer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 670px;
+  width: 100%;
+  margin: 0 auto 20px!important;
+  padding-bottom: 35px
+}
+@media only screen and (max-width:992px) {
+  .hero__timer {
+    padding-bottom: 10px;
+    margin: 0 auto 10px!important
+  }
+}
+@media only screen and (max-width:480px) {
+  .hero__timer {
+    padding-bottom: 0
+  }
+}
+.hero .flip-clock-wrapper {
+  font-family: Inter,sans-serif!important
+}
+@media only screen and (max-width:992px) {
+  .hero .flip-clock-divider {
+    height: 90px
+  }
+}
+@media only screen and (max-width:480px) {
+  .hero .flip-clock-divider {
+    height: 60px
+  }
+}
+.hero .flip-clock-divider .flip-clock-label {
+  text-transform: uppercase;
+  color: #fff!important;
+  font-weight: 700;
+  font-size: 18px;
+  top: 105%;
+  display: block;
+  left: 45px!important;
+  right: auto!important;
+  -webkit-transform: translate(0,0)!important;
+  -ms-transform: translate(0,0)!important;
+  transform: translate(0,0)!important
+}
+@media only screen and (max-width:992px) {
+  .hero .flip-clock-divider .flip-clock-label {
+    top: 80px;
+    font-size: 16px;
+    left: 29px!important
+  }
+}
+@media only screen and (max-width:480px) {
+  .hero .flip-clock-divider .flip-clock-label {
+    display: none
+  }
+}
+.hero .flip-clock-dot {
+  background-color: #fff
+}
+.hero .flip-clock-wrapper ul li a div.up:after {
+  display: none!important
+}
+@media only screen and (max-width:992px) {
+  .hero .flip-clock-wrapper ul {
+    width: 45px;
+    height: 70px
+  }
+}
+@media only screen and (max-width:480px) {
+  .hero .flip-clock-wrapper ul {
+    width: 35px;
+    height: 50px
+  }
+}
+.hero .down,
+.hero .inn {
+  background-color: #fff!important;
+  color: #383845!important;
+  text-shadow: 0 1px 2px #fff!important;
+  font-size: 75px!important
+}
+@media only screen and (max-width:992px) {
+  .hero .down,
+  .hero .inn {
+    font-size: 55px!important;
+    line-height: 70px
+  }
+}
+@media only screen and (max-width:480px) {
+  .hero .down,
+  .hero .inn {
+    font-size: 36px!important;
+    line-height: 50px
+  }
+}
+.hero .flip-clock-wrapper .flip {
+  -webkit-box-shadow: 0 2px 5px transparent!important;
+  box-shadow: 0 2px 5px transparent!important
 }
 .footer {
   background-color: #383845;

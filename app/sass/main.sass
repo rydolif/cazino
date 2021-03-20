@@ -251,7 +251,8 @@
 				display: flex
 				max-width: 100%
 
-	&--active, &--menu
+	&--active,
+	&--menu
 		box-shadow: 0 0 5px 0 rgba(#000, .25)
 
 
@@ -269,6 +270,8 @@
 	+r(767)
 		padding: 100px 0 40px
 
+	&--hero
+		padding-top: 75px
 
 .news
 	&__title
@@ -746,12 +749,15 @@
 		border-radius: 5px
 		overflow: hidden
 
+		+r(1200)
+			width: 60px
+			height: 60px
+
 		img
 			max-width: 100%
 			max-height: 100%
 
 	&__text
-		flex-shrink: 0
 		color: #8d8e9e
 		text-align: center
 
@@ -769,7 +775,7 @@
 		padding: 15px 35px
 		border-radius: 10px
 
-		+r(992)
+		+r(1200)
 			padding: 10px 20px
 
 		&_wrap
@@ -791,6 +797,240 @@
 		gap: 10px
 		flex-shrink: 0
 		min-width: fit-content
+
+
+.hero
+	+cover
+	background-image: url(../img/hero__bg.jpg)
+	padding: 75px 0
+	display: flex
+	align-items: center
+	z-index: 1
+	overflow: hidden
+	color: #fff
+
+	&__container
+		@extend .bonus__container
+		padding-top: 0
+		padding-bottom: 45px
+
+	&__logo
+		display: flex
+		justify-content: center
+		margin: -55px auto 15px
+		max-width: 70%
+		width: 670px
+
+		+r(1440)
+			max-width: 40%
+
+		img
+			width: 100%
+
+	&__form
+		max-width: 290px
+		margin: 0 auto
+		text-align: center
+
+		+r(1200)
+			margin-bottom: 25px
+
+		&_line
+			position: relative
+
+		input
+			height: 50px
+			width: 100%
+			background: #FFF
+			box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25)
+			border-radius: 15px
+			border: 0
+			color: #8D8E9E
+			padding: 0 20px
+			line-height: 50px
+
+			&::placeholder
+				color: #8D8E9E
+				line-height: 50px
+
+		&_btn
+			position: absolute
+			right: 5px
+			top: 5px
+			display: block
+			width: 45px
+			height: 40px
+			background-color: $accent
+			border-radius: 15px
+			border: none
+			outline: none
+			background-image: url(../img/arrow.svg)
+			background-size: 65%
+			background-repeat: no-repeat
+			background-position: center
+			padding: 0
+
+	&__subtitle
+		text-transform: uppercase
+		color: $accent
+		font-weight: 900
+		font-size: 24px
+		margin-bottom: 15px
+
+		+r(992)
+			font-size: 20px
+			margin-bottom: 10px
+
+		+r(767)
+			font-size: 16px
+
+	&__content
+		position: absolute
+		top: 30px
+		right: 36px
+		max-width: 320px
+		width: 100%
+		padding: 15px
+		background: #126F4F
+		box-shadow: inset 4px 5px 6px rgba(31, 36, 78, 0.25)
+		border-radius: 15px
+
+		+r(1440)
+			top: 15px
+			right: 15px
+
+		+r(1200)
+			position: relative
+			top: 0
+			right: auto
+			margin: 0 auto
+			max-width: 420px
+
+		&_btn
+			position: absolute
+			right: 5px
+			top: 5px
+			display: flex
+			justify-content: center
+			align-items: center
+			border-radius: 15px
+			min-width: 42px
+			height: 38px
+			background-color: $accent
+			font-size: 30px
+			font: 700px
+
+		&_text
+			margin-bottom: 50px
+			max-width: 245px
+			line-height: 1.3
+
+			+r(1440)
+				margin-bottom: 25px
+
+			+r(1200)
+				max-width: calc(100% - 50px)
+				margin-bottom: 15px
+
+		&_price
+			display: flex
+			justify-content: space-between
+			align-items: center
+
+			p
+				max-width: 45%
+			
+			span
+				font-size: 24px
+				color: $accent
+				font-weight: 900
+
+				+r(992)
+					font-size: 20px
+
+		&_name
+			display: flex
+			justify-content: space-between
+			align-items: center
+
+			p
+				max-width: 45%
+
+	&__timer
+		display: flex
+		justify-content: center
+		max-width: 670px
+		width: 100%
+		margin: 0 auto 20px !important
+		padding-bottom: 35px
+
+		+r(992)
+			padding-bottom: 10px
+			margin: 0 auto 10px !important
+		
+		+r(480)
+			padding-bottom: 0
+
+	.flip-clock-wrapper
+		font-family: $fonts !important
+
+	.flip-clock-divider
+		+r(992)
+			height: 90px
+
+		+r(480)
+			height: 60px
+
+		.flip-clock-label
+			text-transform: uppercase
+			color: #fff !important
+			font-weight: 700
+			font-size: 18px
+			top: 105%
+			display: block
+			left: 45px !important
+			right: auto !important
+			transform: translate(0, 0) !important
+
+			+r(992)
+				top: 80px
+				font-size: 16px
+				left: 29px !important
+			
+			+r(480)
+				display: none
+
+	.flip-clock-dot
+		background-color: #fff
+
+	.flip-clock-wrapper ul li a div.up:after
+		display: none !important
+
+	.flip-clock-wrapper ul
+		+r(992)
+			width: 45px
+			height: 70px
+
+		+r(480)
+			width: 35px
+			height: 50px
+
+	.inn, .down
+		background-color: #fff !important
+		color: $text !important
+		text-shadow: 0 1px 2px #fff !important
+		font-size: 75px !important
+
+		+r(992)
+			font-size: 55px !important
+			line-height: 70px
+		
+		+r(480)
+			font-size: 36px !important
+			line-height: 50px
+
+	.flip-clock-wrapper .flip
+		box-shadow: 0 2px 5px rgba(#000, 0%) !important
 
 
 .footer
