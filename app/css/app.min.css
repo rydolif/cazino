@@ -1713,7 +1713,8 @@ textarea::placeholder {
   }
 }
 .hero__logo img {
-  width: 100%
+  width: 100%;
+  height: auto
 }
 .hero__form {
   max-width: 290px;
